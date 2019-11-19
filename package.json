@@ -1,0 +1,32 @@
+{
+  "name": "pollenium-uvaursi",
+  "version": "0.0.0",
+  "description": "",
+  "main": "node/index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pollenium/uvaursi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pollenium/uvaursi/issues"
+  },
+  "homepage": "https://github.com/pollenium/uvaursi#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.11",
+    "bn": "^1.0.5",
+    "bn.js": "^5.0.0",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0"
+  },
+  "dependencies": {
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.7.2"
+  }
+}
