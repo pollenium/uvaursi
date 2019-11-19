@@ -10,3 +10,5 @@ var fromUintNumber_1 = require("./src/fromUintNumber");
 exports.fromUintNumber = fromUintNumber_1.fromUintNumber;
 var toHex_1 = require("./src/toHex");
 exports.toHex = toHex_1.toHex;
+var concat_1 = require("./src/concat");
+exports.concat = concat_1.concat;

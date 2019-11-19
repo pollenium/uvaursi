@@ -1,18 +1,6 @@
 "use strict";
 exports.__esModule = true;
 var fromUintNumber_1 = require("./fromUintNumber");
-var params = [
-    [0, [0]],
-    [1, [1]],
-    [255, [255]],
-    [256, [1, 0]],
-    [257, [1, 1]],
-    [511, [1, 255]],
-    [512, [2, 0]],
-    [65535, [255, 255]],
-    [65536, [1, 0, 0]],
-    [65537, [1, 0, 1]]
-];
 var Fixture = /** @class */ (function () {
     function Fixture(number, array) {
         this.number = number;

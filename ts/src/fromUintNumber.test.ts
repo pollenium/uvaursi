@@ -1,20 +1,6 @@
 import Bn from 'bn.js'
 import { fromUintNumber, NegativeNumberError, DecimalNumberError, UnsafeNumberError } from './fromUintNumber'
 
-const params = [
-  [0, [0]],
-  [1, [1]],
-  [255, [255]],
-  [256, [1, 0]],
-  [257, [1, 1]],
-  [511, [1, 255]],
-  [512, [2, 0]],
-  [65535, [255, 255]],
-  [65536, [1, 0, 0]],
-  [65537, [1, 0, 1]]
-]
-
-
 class Fixture{
   public uint8Array: Uint8Array;
   constructor (public number: number, array: Array<number>) {
