@@ -39,31 +39,23 @@ function getIsValidHexishChar(hexishChar) {
     }
     return false;
 }
-function getIsValidHexish(hexish) {
-    if (hexish.indexOf('0x') === 0) {
-        return getIsValidHexish(hexish.substr(2));
-    }
-    for (var i = 0; i < hexish.length; i++) {
-        if (!getIsValidHexishChar(hexish[i])) {
+function getIsValidChoppedHexish(choppedHexish) {
+    for (var i = 0; i < choppedHexish.length; i++) {
+        if (!getIsValidHexishChar(choppedHexish[i])) {
             return false;
         }
     }
     return true;
 }
-function assertIsValidHexish(hexish) {
-    if (!getIsValidHexish(hexish)) {
-        throw new InvalidHexishError(hexish);
-    }
-}
 function fromHexish(hexish) {
-    if (hexish.length === 0) {
+    var choppedHexish = hexish.indexOf('0x') === 0 ? hexish.substr(2) : hexish;
+    if (choppedHexish.length === 0) {
         return new Uint8Array([]);
     }
-    if (hexish.indexOf('0x') === 0) {
-        return fromHexish(hexish.substr(2));
+    if (!getIsValidChoppedHexish(choppedHexish)) {
+        throw new InvalidHexishError(hexish);
     }
-    assertIsValidHexish(hexish);
-    var array = hexish.match(/.{1,2}/g).map(function (byteHex) {
+    var array = choppedHexish.match(/.{1,2}/g).map(function (byteHex) {
         return parseInt(byteHex, 16);
     });
     return new Uint8Array(array);
