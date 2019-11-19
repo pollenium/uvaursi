@@ -19,7 +19,6 @@
   "homepage": "https://github.com/pollenium/uvaursi#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.11",
     "bn": "^1.0.5",
     "bn.js": "^5.0.0",
     "jest": "^24.9.0",
