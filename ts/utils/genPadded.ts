@@ -5,7 +5,7 @@ export class OverflowError extends Error {
   }
 }
 
-export function getPaddedLeft(length: number, unpadded: Uint8Array): Uint8Array {
+export function genPaddedLeft(length: number, unpadded: Uint8Array): Uint8Array {
   if (length < unpadded.length) {
     throw new OverflowError(length, unpadded.length)
   }
@@ -14,7 +14,7 @@ export function getPaddedLeft(length: number, unpadded: Uint8Array): Uint8Array 
   return padded
 }
 
-export function getPaddedRight(length: number, unpadded: Uint8Array): Uint8Array {
+export function genPaddedRight(length: number, unpadded: Uint8Array): Uint8Array {
   if (length < unpadded.length) {
     throw new OverflowError(length, unpadded.length)
   }

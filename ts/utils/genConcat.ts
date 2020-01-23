@@ -1,4 +1,4 @@
-export function concat(uint8Arrays: Array<Uint8Array>) : Uint8Array {
+export function genConcat(uint8Arrays: Array<Uint8Array>) : Uint8Array {
   const length = uint8Arrays.reduce((length, uint8Array) => {
     return length + uint8Array.length
   }, 0)

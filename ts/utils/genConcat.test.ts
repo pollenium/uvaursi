@@ -1,4 +1,4 @@
-import { concat } from './concat'
+import { genConcat } from './genConcat'
 
 class Fixture{
   public uint8Arrays: Array<Uint8Array>;
@@ -20,6 +20,6 @@ const fixtures = [
 
 fixtures.forEach((fixture) => {
   test(JSON.stringify(fixture.arrays), () => {
-    expect(concat(fixture.uint8Arrays)).toStrictEqual(fixture.uint8Array)
+    expect(genConcat(fixture.uint8Arrays)).toStrictEqual(fixture.uint8Array)
   })
 })
