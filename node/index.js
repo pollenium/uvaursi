@@ -15,3 +15,5 @@ exports.concat = concat_1.concat;
 var getPadded_1 = require("./src/getPadded");
 exports.getPaddedLeft = getPadded_1.getPaddedLeft;
 exports.getPaddedRight = getPadded_1.getPaddedRight;
+var getIsEqual_1 = require("./src/getIsEqual");
+exports.getIsEqual = getIsEqual_1.getIsEqual;
