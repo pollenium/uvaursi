@@ -1,64 +1,59 @@
 import * as utils from './utils'
 
-export class Uvaursi {
+export class Uvaursi extends Uint8Array {
 
   private hex: string;
   private phex: string;
 
-  constructor(readonly uint8Array: Uint8Array) {}
-
-  toHex(): string {
+  uuToHex(): string {
     if (this.hex) {
       return this.hex
     }
-    this.hex = utils.toHex(this.uint8Array)
+    this.hex = utils.toHex(this)
     return this.hex
   }
 
-  toPhex(): string {
+  uuToPhex(): string {
     if (this.phex) {
       return this.phex
     }
-    this.phex = utils.toPhex(this.uint8Array)
+    this.phex = utils.toPhex(this)
     return this.phex
   }
 
-  genClone(): Uvaursi {
-    return new Uvaursi(this.uint8Array.slice())
+  uuGenClone(): Uvaursi {
+    return new Uvaursi(this.slice())
   }
 
-  genPaddedLeft(length: number): Uvaursi {
+  uuGenPaddedLeft(length: number): Uvaursi {
     return new Uvaursi(
-      utils.genPaddedLeft(length, this.uint8Array)
+      utils.genPaddedLeft(length, this)
     )
   }
 
-  genPaddedRight(length: number): Uvaursi {
+  uuGenPaddedRight(length: number): Uvaursi {
     return new Uvaursi(
-      utils.genPaddedRight(length, this.uint8Array)
+      utils.genPaddedRight(length, this)
     )
   }
 
-  getIsEqual(uvaursi: Uvaursi): boolean {
-    return utils.getIsEqual(this.uint8Array, uvaursi.uint8Array)
+  uuGetIsEqual(uint8Array: Uint8Array): boolean {
+    return utils.getIsEqual(this, uint8Array)
   }
 
-  static fromArray(array: Array<number>): Uvaursi {
+  static uuFromArray(array: Array<number>): Uvaursi {
     return new Uvaursi(utils.fromArray(array))
   }
 
-  static fromHexish(hexish: string): Uvaursi {
+  static uuFromHexish(hexish: string): Uvaursi {
     return new Uvaursi(utils.fromHexish(hexish))
   }
 
-  static genRandom(length: number): Uvaursi {
+  static uuGenRandom(length: number): Uvaursi {
     return new Uvaursi(utils.genRandom(length))
   }
 
-  static genConcat(uvaursis: Array<Uvaursi>): Uvaursi {
-    const uint8Arrays = uvaursis.map((uvaursi) => {
-      return uvaursi.uint8Array
-    })
+  static uuGenConcat(uint8Arrays: Array<Uint8Array>): Uvaursi {
     return new Uvaursi(utils.genConcat(uint8Arrays))
   }
 
