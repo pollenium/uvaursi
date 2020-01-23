@@ -16,7 +16,7 @@ exports.__esModule = true;
 var OverflowError = /** @class */ (function (_super) {
     __extends(OverflowError, _super);
     function OverflowError(length, uint8ArrayLength) {
-        var _this = _super.call(this, "Overflow: Trying to put " + uint8ArrayLength + " length Uint8Array into " + length + " length Buttercup") || this;
+        var _this = _super.call(this, "Overflow: Trying to put " + uint8ArrayLength + " length Uint8Array into " + length + " length Uint8Array") || this;
         Object.setPrototypeOf(_this, OverflowError.prototype);
         return _this;
     }
