@@ -13,16 +13,40 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-var InvalidHexishError = /** @class */ (function (_super) {
-    __extends(InvalidHexishError, _super);
-    function InvalidHexishError(hexish) {
-        var _this = _super.call(this, "Invalid hexish: " + hexish) || this;
-        Object.setPrototypeOf(_this, InvalidHexishError.prototype);
+function fromHexish(hexish) {
+    if (hexish.length === 0) {
+        return new Uint8Array([]);
+    }
+    if (hexish.indexOf('0x') === 0) {
+        return fromHexish(hexish.substr(2));
+    }
+    assertIsValidHexish(hexish);
+    var array = hexish.match(/.{1,2}/g).map(function (byteHex) {
+        return parseInt(byteHex, 16);
+    });
+    return new Uint8Array(array);
+}
+exports.fromHexish = fromHexish;
+var InvalidHexishCharError = /** @class */ (function (_super) {
+    __extends(InvalidHexishCharError, _super);
+    function InvalidHexishCharError(hexishChar) {
+        var _this = _super.call(this, "Invalid hexish char: " + hexishChar) || this;
+        Object.setPrototypeOf(_this, InvalidHexishCharError.prototype);
         return _this;
     }
-    return InvalidHexishError;
+    return InvalidHexishCharError;
 }(Error));
-exports.InvalidHexishError = InvalidHexishError;
+exports.InvalidHexishCharError = InvalidHexishCharError;
+var InvalidHexishParityError = /** @class */ (function (_super) {
+    __extends(InvalidHexishParityError, _super);
+    function InvalidHexishParityError(hexish) {
+        var _this = _super.call(this, "Hexish should be even length, not odd: " + hexish) || this;
+        Object.setPrototypeOf(_this, InvalidHexishParityError.prototype);
+        return _this;
+    }
+    return InvalidHexishParityError;
+}(Error));
+exports.InvalidHexishParityError = InvalidHexishParityError;
 var hexishCharCodesRanges = [
     [48, 57],
     [97, 102],
@@ -39,25 +63,14 @@ function getIsValidHexishChar(hexishChar) {
     }
     return false;
 }
-function getIsValidChoppedHexish(choppedHexish) {
-    for (var i = 0; i < choppedHexish.length; i++) {
-        if (!getIsValidHexishChar(choppedHexish[i])) {
-            return false;
+function assertIsValidHexish(hexish) {
+    if (hexish.length % 2 === 1) {
+        throw new InvalidHexishParityError(hexish);
+    }
+    for (var i = 0; i < hexish.length; i++) {
+        var hexishChar = hexish[i];
+        if (!getIsValidHexishChar(hexishChar)) {
+            throw new InvalidHexishCharError(hexishChar);
         }
     }
-    return true;
 }
-function fromHexish(hexish) {
-    var choppedHexish = hexish.indexOf('0x') === 0 ? hexish.substr(2) : hexish;
-    if (choppedHexish.length === 0) {
-        return new Uint8Array([]);
-    }
-    if (!getIsValidChoppedHexish(choppedHexish)) {
-        throw new InvalidHexishError(hexish);
-    }
-    var array = choppedHexish.match(/.{1,2}/g).map(function (byteHex) {
-        return parseInt(byteHex, 16);
-    });
-    return new Uint8Array(array);
-}
-exports.fromHexish = fromHexish;
