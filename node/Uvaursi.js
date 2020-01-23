@@ -26,42 +26,42 @@ var Uvaursi = /** @class */ (function (_super) {
     function Uvaursi() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Uvaursi.prototype.toHex = function () {
+    Uvaursi.prototype.uuToHex = function () {
         if (this.hex) {
             return this.hex;
         }
         this.hex = utils.toHex(this);
         return this.hex;
     };
-    Uvaursi.prototype.toPhex = function () {
+    Uvaursi.prototype.uuToPhex = function () {
         if (this.phex) {
             return this.phex;
         }
         this.phex = utils.toPhex(this);
         return this.phex;
     };
-    Uvaursi.prototype.genClone = function () {
+    Uvaursi.prototype.uuGenClone = function () {
         return new Uvaursi(this.slice());
     };
-    Uvaursi.prototype.genPaddedLeft = function (length) {
+    Uvaursi.prototype.uuGenPaddedLeft = function (length) {
         return new Uvaursi(utils.genPaddedLeft(length, this));
     };
-    Uvaursi.prototype.genPaddedRight = function (length) {
+    Uvaursi.prototype.uuGenPaddedRight = function (length) {
         return new Uvaursi(utils.genPaddedRight(length, this));
     };
-    Uvaursi.prototype.getIsEqual = function (uint8Array) {
+    Uvaursi.prototype.uuGetIsEqual = function (uint8Array) {
         return utils.getIsEqual(this, uint8Array);
     };
-    Uvaursi.fromArray = function (array) {
+    Uvaursi.uuFromArray = function (array) {
         return new Uvaursi(utils.fromArray(array));
     };
-    Uvaursi.fromHexish = function (hexish) {
+    Uvaursi.uuFromHexish = function (hexish) {
         return new Uvaursi(utils.fromHexish(hexish));
     };
-    Uvaursi.genRandom = function (length) {
+    Uvaursi.uuGenRandom = function (length) {
         return new Uvaursi(utils.genRandom(length));
     };
-    Uvaursi.genConcat = function (uint8Arrays) {
+    Uvaursi.uuGenConcat = function (uint8Arrays) {
         return new Uvaursi(utils.genConcat(uint8Arrays));
     };
     return Uvaursi;
