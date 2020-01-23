@@ -1,5 +1,7 @@
 "use strict";
 exports.__esModule = true;
+var genRandom_1 = require("./src/genRandom");
+exports.genRandom = genRandom_1.genRandom;
 var fromArray_1 = require("./src/fromArray");
 exports.fromArray = fromArray_1.fromArray;
 var fromHexish_1 = require("./src/fromHexish");

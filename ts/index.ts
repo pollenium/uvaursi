@@ -1,3 +1,5 @@
+export { genRandom } from './src/genRandom'
+
 export { fromArray } from './src/fromArray'
 export { fromHexish } from './src/fromHexish'
 
