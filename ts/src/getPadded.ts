@@ -1,6 +1,6 @@
 export class OverflowError extends Error {
   constructor(length: number, uint8ArrayLength: number) {
-    super(`Overflow: Trying to put ${uint8ArrayLength} length Uint8Array into ${length} length Buttercup` )
+    super(`Overflow: Trying to put ${uint8ArrayLength} length Uint8Array into ${length} length Uint8Array` )
     Object.setPrototypeOf(this, OverflowError.prototype)
   }
 }
