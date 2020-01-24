@@ -1,7 +1,5 @@
-"use strict";
-exports.__esModule = true;
-var toHex_1 = require("./toHex");
-var fixtures = [
+import { toHex } from './toHex';
+const fixtures = [
     {
         hexish: '',
         uint8Array: new Uint8Array([])
@@ -27,9 +25,9 @@ var fixtures = [
         uint8Array: new Uint8Array([255, 255])
     }
 ];
-fixtures.forEach(function (fixture, index) {
-    var hexish = fixture.hexish, uint8Array = fixture.uint8Array;
-    test("toHex " + index + ": " + hexish, function () {
-        expect(toHex_1.toHex(uint8Array)).toBe(hexish);
+fixtures.forEach((fixture, index) => {
+    const { hexish, uint8Array } = fixture;
+    test(`toHex ${index}: ${hexish}`, () => {
+        expect(toHex(uint8Array)).toBe(hexish);
     });
 });

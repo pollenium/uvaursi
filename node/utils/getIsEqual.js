@@ -1,14 +1,11 @@
-"use strict";
-exports.__esModule = true;
-function getIsEqual(a, b) {
+export function getIsEqual(a, b) {
     if (a.length !== b.length) {
         return false;
     }
-    for (var i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {
         if (a[i] !== b[i]) {
             return false;
         }
     }
     return true;
 }
-exports.getIsEqual = getIsEqual;

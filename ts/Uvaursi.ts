@@ -5,6 +5,10 @@ export class Uvaursi extends Uint8Array {
   private hex: string;
   private phex: string;
 
+  constructor(uint8Array: Uint8Array) {
+    super(uint8Array)
+  }
+
   uuToHex(): string {
     if (this.hex) {
       return this.hex

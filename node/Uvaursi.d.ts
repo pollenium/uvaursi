@@ -1,6 +1,7 @@
 export declare class Uvaursi extends Uint8Array {
     private hex;
     private phex;
+    constructor(uint8Array: Uint8Array);
     uuToHex(): string;
     uuToPhex(): string;
     uuGenClone(): Uvaursi;
