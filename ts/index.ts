@@ -1,4 +1,5 @@
 export { Uu } from './Uu'
+export { Uish } from './Uish'
 
-import * as _utils from './utils'
-export const utils = _utils
+import * as utils from './utils'
+export const uUtils = utils
