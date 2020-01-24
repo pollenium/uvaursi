@@ -1,1 +1,1 @@
-export declare function genConcat(uint8Arrays: Array<Uint8Array>): Uint8Array;
+export declare function genConcat(us: Array<Uint8Array>): Uint8Array;

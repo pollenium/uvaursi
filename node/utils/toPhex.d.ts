@@ -1,1 +1,1 @@
-export declare function toPhex(uint8Array: Uint8Array): string;
+export declare function toPhex(u: Uint8Array): string;

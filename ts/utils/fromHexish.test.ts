@@ -2,48 +2,48 @@ import { fromHexish, InvalidHexishCharError, InvalidHexishParityError } from './
 
 interface Fixture{
   hexish: string
-  uint8Array: Uint8Array,
+  u: Uint8Array,
 }
 
 const fixtures: Array<Fixture> = [
   {
     hexish: '',
-    uint8Array: new Uint8Array([])
+    u: new Uint8Array([])
   },
   {
     hexish: '0x',
-    uint8Array: new Uint8Array([])
+    u: new Uint8Array([])
   },
   {
     hexish: '0x00',
-    uint8Array: new Uint8Array([0])
+    u: new Uint8Array([0])
   },
   {
     hexish: '0x01',
-    uint8Array: new Uint8Array([1])
+    u: new Uint8Array([1])
   },
   {
     hexish: '0xff',
-    uint8Array: new Uint8Array([255])
+    u: new Uint8Array([255])
   },
   {
     hexish: '0xfF',
-    uint8Array: new Uint8Array([255])
+    u: new Uint8Array([255])
   },
   {
     hexish: '0xFfFf',
-    uint8Array: new Uint8Array([255, 255])
+    u: new Uint8Array([255, 255])
   },
   {
     hexish: '0x01FF',
-    uint8Array: new Uint8Array([1, 255])
+    u: new Uint8Array([1, 255])
   }
 ]
 
 fixtures.forEach((fixture, index) => {
-  const { hexish, uint8Array } = fixture
+  const { hexish, u } = fixture
   test(`fromHexish ${index}: ${hexish}`, () => {
-    expect(fromHexish(hexish)).toStrictEqual(uint8Array)
+    expect(fromHexish(hexish)).toStrictEqual(u)
   })
 })
 

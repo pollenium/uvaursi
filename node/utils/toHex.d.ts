@@ -1,1 +1,1 @@
-export declare function toHex(uint8Array: Uint8Array): string;
+export declare function toHex(u: Uint8Array): string;

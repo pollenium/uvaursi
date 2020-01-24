@@ -38,6 +38,9 @@ var Uu = /** @class */ (function () {
     Uu.prototype.getIsEqual = function (uish) {
         return utils.getIsEqual(this.u, utils.unwrap(uish));
     };
+    Uu.prototype.unwrap = function () {
+        return utils.unwrap(this);
+    };
     Uu.fromArray = function (array) {
         return new Uu(utils.fromArray(array));
     };

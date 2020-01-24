@@ -7,7 +7,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 exports.__esModule = true;
-var Uvaursi_1 = require("./Uvaursi");
-exports.Uvaursi = Uvaursi_1.Uvaursi;
+var Uu_1 = require("./Uu");
+exports.Uu = Uu_1.Uu;
 var _utils = __importStar(require("./utils"));
 exports.utils = _utils;

@@ -1,11 +1,11 @@
-export function genConcat(uint8Arrays: Array<Uint8Array>) : Uint8Array {
-  const length = uint8Arrays.reduce((length, uint8Array) => {
-    return length + uint8Array.length
+export function genConcat(us: Array<Uint8Array>) : Uint8Array {
+  const length = us.reduce((length, u) => {
+    return length + u.length
   }, 0)
-  const uint8Array = new Uint8Array(length)
-  uint8Arrays.reduce((offset, _uint8Array) => {
-    uint8Array.set(_uint8Array, offset)
-    return offset + _uint8Array.length
+  const u = new Uint8Array(length)
+  us.reduce((offset, _u) => {
+    u.set(_u, offset)
+    return offset + _u.length
   }, 0)
-  return uint8Array
+  return u
 }

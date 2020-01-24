@@ -1,14 +1,14 @@
 "use strict";
 exports.__esModule = true;
-function genConcat(uint8Arrays) {
-    var length = uint8Arrays.reduce(function (length, uint8Array) {
-        return length + uint8Array.length;
+function genConcat(us) {
+    var length = us.reduce(function (length, u) {
+        return length + u.length;
     }, 0);
-    var uint8Array = new Uint8Array(length);
-    uint8Arrays.reduce(function (offset, _uint8Array) {
-        uint8Array.set(_uint8Array, offset);
-        return offset + _uint8Array.length;
+    var u = new Uint8Array(length);
+    us.reduce(function (offset, _u) {
+        u.set(_u, offset);
+        return offset + _u.length;
     }, 0);
-    return uint8Array;
+    return u;
 }
 exports.genConcat = genConcat;

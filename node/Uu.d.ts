@@ -10,6 +10,7 @@ export declare class Uu {
     genPaddedLeft(length: number): Uu;
     genPaddedRight(length: number): Uu;
     getIsEqual(uish: Uish): boolean;
+    unwrap(): Uint8Array;
     static fromArray(array: Array<number>): Uu;
     static fromHexish(hexish: string): Uu;
     static genRandom(length: number): Uu;

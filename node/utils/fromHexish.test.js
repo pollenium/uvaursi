@@ -4,41 +4,41 @@ var fromHexish_1 = require("./fromHexish");
 var fixtures = [
     {
         hexish: '',
-        uint8Array: new Uint8Array([])
+        u: new Uint8Array([])
     },
     {
         hexish: '0x',
-        uint8Array: new Uint8Array([])
+        u: new Uint8Array([])
     },
     {
         hexish: '0x00',
-        uint8Array: new Uint8Array([0])
+        u: new Uint8Array([0])
     },
     {
         hexish: '0x01',
-        uint8Array: new Uint8Array([1])
+        u: new Uint8Array([1])
     },
     {
         hexish: '0xff',
-        uint8Array: new Uint8Array([255])
+        u: new Uint8Array([255])
     },
     {
         hexish: '0xfF',
-        uint8Array: new Uint8Array([255])
+        u: new Uint8Array([255])
     },
     {
         hexish: '0xFfFf',
-        uint8Array: new Uint8Array([255, 255])
+        u: new Uint8Array([255, 255])
     },
     {
         hexish: '0x01FF',
-        uint8Array: new Uint8Array([1, 255])
+        u: new Uint8Array([1, 255])
     }
 ];
 fixtures.forEach(function (fixture, index) {
-    var hexish = fixture.hexish, uint8Array = fixture.uint8Array;
+    var hexish = fixture.hexish, u = fixture.u;
     test("fromHexish " + index + ": " + hexish, function () {
-        expect(fromHexish_1.fromHexish(hexish)).toStrictEqual(uint8Array);
+        expect(fromHexish_1.fromHexish(hexish)).toStrictEqual(u);
     });
 });
 var invalidHexishChar = [
