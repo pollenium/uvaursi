@@ -12,6 +12,9 @@ var Uu = /** @class */ (function () {
     function Uu(u) {
         this.u = u;
     }
+    Uu.prototype.toArray = function () {
+        return utils.toArray(this.u);
+    };
     Uu.prototype.toHex = function () {
         if (this.hex) {
             return this.hex;

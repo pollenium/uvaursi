@@ -8,6 +8,10 @@ export class Uu {
 
   constructor(readonly u: Uint8Array) {}
 
+  toArray(): Array<number> {
+    return utils.toArray(this.u)
+  }
+
   toHex(): string {
     if (this.hex) {
       return this.hex

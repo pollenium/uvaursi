@@ -4,6 +4,7 @@ export declare class Uu {
     private hex;
     private phex;
     constructor(u: Uint8Array);
+    toArray(): Array<number>;
     toHex(): string;
     toPhex(): string;
     genClone(): Uu;
