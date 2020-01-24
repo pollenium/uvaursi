@@ -1,3 +1,4 @@
 export { Uu } from './Uu';
-import * as _utils from './utils';
-export declare const utils: typeof _utils;
+export { Uish } from './Uish';
+import * as utils from './utils';
+export declare const uUtils: typeof utils;
