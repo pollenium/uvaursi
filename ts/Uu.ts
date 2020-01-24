@@ -71,6 +71,10 @@ export class Uu {
     return new Uu(utils.genConcat(us))
   }
 
+  static genZeros(length: number): Uu {
+    return new Uu(new Uint8Array(length))
+  }
+
   static wrap(uish: Uish): Uu {
     if (uish instanceof Uint8Array) {
       return new Uu(uish)

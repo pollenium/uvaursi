@@ -16,5 +16,6 @@ export declare class Uu {
     static fromHexish(hexish: string): Uu;
     static genRandom(length: number): Uu;
     static genConcat(uvaursis: Array<Uish>): Uu;
+    static genZeros(length: number): Uu;
     static wrap(uish: Uish): Uu;
 }

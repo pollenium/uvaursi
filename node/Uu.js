@@ -59,6 +59,9 @@ var Uu = /** @class */ (function () {
         });
         return new Uu(utils.genConcat(us));
     };
+    Uu.genZeros = function (length) {
+        return new Uu(new Uint8Array(length));
+    };
     Uu.wrap = function (uish) {
         if (uish instanceof Uint8Array) {
             return new Uu(uish);
