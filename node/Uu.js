@@ -38,6 +38,9 @@ var Uu = /** @class */ (function () {
     Uu.prototype.genPaddedRight = function (length) {
         return new Uu(utils.genPaddedRight(length, this.u));
     };
+    Uu.prototype.genXor = function (uish) {
+        return new Uu(utils.genXor(this.u, utils.unwrap(uish)));
+    };
     Uu.prototype.getIsEqual = function (uish) {
         return utils.getIsEqual(this.u, utils.unwrap(uish));
     };

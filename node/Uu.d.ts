@@ -11,6 +11,7 @@ export declare class Uu implements UWrapper {
     genClone(): Uu;
     genPaddedLeft(length: number): Uu;
     genPaddedRight(length: number): Uu;
+    genXor(uish: Uish): Uu;
     getIsEqual(uish: Uish): boolean;
     unwrap(): Uint8Array;
     static fromArray(array: Array<number>): Uu;

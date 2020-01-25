@@ -45,6 +45,13 @@ export class Uu implements UWrapper {
     )
   }
 
+  genXor(uish: Uish): Uu {
+    return new Uu(
+      utils.genXor(this.u, utils.unwrap(uish))
+    )
+  }
+
+
   getIsEqual(uish: Uish): boolean {
     return utils.getIsEqual(this.u, utils.unwrap(uish))
   }

@@ -9,6 +9,7 @@ export { toHex } from './utils/toHex'
 export { toPhex } from './utils/toPhex'
 
 export { genPaddedLeft, genPaddedRight } from './utils/genPadded'
+export { genXor } from './utils/genXor'
 
 export { getIsEqual } from './utils/getIsEqual'
 
