@@ -1,5 +1,3 @@
-interface HasU {
-  u: Uint8Array
-}
+import { UWrapper } from './UWrapper'
 
-export type Uish = HasU | Uint8Array;
+export type Uish = UWrapper | Uint8Array;

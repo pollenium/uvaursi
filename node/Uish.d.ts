@@ -1,5 +1,2 @@
-interface HasU {
-    u: Uint8Array;
-}
-export declare type Uish = HasU | Uint8Array;
-export {};
+import { UWrapper } from './UWrapper';
+export declare type Uish = UWrapper | Uint8Array;

@@ -1,7 +1,8 @@
 import * as utils from './utils'
+import { UWrapper } from './UWrapper'
 import { Uish } from './Uish'
 
-export class Uu {
+export class Uu implements UWrapper {
 
   private hex: string;
   private phex: string;

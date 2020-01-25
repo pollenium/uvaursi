@@ -1,5 +1,6 @@
+import { UWrapper } from './UWrapper';
 import { Uish } from './Uish';
-export declare class Uu {
+export declare class Uu implements UWrapper {
     readonly u: Uint8Array;
     private hex;
     private phex;
