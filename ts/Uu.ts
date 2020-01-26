@@ -84,9 +84,9 @@ export class Uu implements UWrapper {
     return new Uu(utils.genRandom(length))
   }
 
-  static genConcat(uvaursis: Array<Uish>): Uu {
-    const us = uvaursis.map((uvaursi) => {
-      return utils.unwrap(us)
+  static genConcat(uishes: Array<Uish>): Uu {
+    const us: Array<Uint8Array> = uishes.map((uish: Uish) => {
+      return utils.unwrap(uish)
     })
     return new Uu(utils.genConcat(us))
   }

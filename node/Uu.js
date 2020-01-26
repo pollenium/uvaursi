@@ -66,9 +66,9 @@ var Uu = /** @class */ (function () {
     Uu.genRandom = function (length) {
         return new Uu(utils.genRandom(length));
     };
-    Uu.genConcat = function (uvaursis) {
-        var us = uvaursis.map(function (uvaursi) {
-            return utils.unwrap(us);
+    Uu.genConcat = function (uishes) {
+        var us = uishes.map(function (uish) {
+            return utils.unwrap(uish);
         });
         return new Uu(utils.genConcat(us));
     };

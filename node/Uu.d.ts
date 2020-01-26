@@ -20,7 +20,7 @@ export declare class Uu implements UWrapper {
     static fromHexish(hexish: string): Uu;
     static fromUtf8(utf8: string): Uu;
     static genRandom(length: number): Uu;
-    static genConcat(uvaursis: Array<Uish>): Uu;
+    static genConcat(uishes: Array<Uish>): Uu;
     static genZeros(length: number): Uu;
     static wrap(uish: Uish): Uu;
 }

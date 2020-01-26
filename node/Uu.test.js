@@ -10,3 +10,12 @@ test('wrap/toHex', function () {
     var uu = Uu_1.Uu.wrap(new Uint8Array([255]));
     expect(uu.toHex()).toBe('ff');
 });
+test('genConcat', function () {
+    var uu = Uu_1.Uu.genConcat([
+        Uu_1.Uu.fromArray([0]),
+        new Uint8Array([1]),
+        new Uint8Array([]),
+        Uu_1.Uu.fromArray([2])
+    ]);
+    expect(uu.toArray()).toStrictEqual([0, 1, 2]);
+});
