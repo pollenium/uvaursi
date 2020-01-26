@@ -6,6 +6,7 @@ export class Uu implements UWrapper {
 
   private hex: string;
   private phex: string;
+  private utf8: string;
 
   constructor(readonly u: Uint8Array) {}
 
@@ -27,6 +28,14 @@ export class Uu implements UWrapper {
     }
     this.phex = utils.toPhex(this.u)
     return this.phex
+  }
+
+  toUtf8(): string {
+    if (this.utf8) {
+      return this.utf8
+    }
+    this.utf8 = utils.toUtf8(this.u)
+    return this.utf8
   }
 
   genClone(): Uu {
@@ -51,7 +60,6 @@ export class Uu implements UWrapper {
     )
   }
 
-
   getIsEqual(uish: Uish): boolean {
     return utils.getIsEqual(this.u, utils.unwrap(uish))
   }
@@ -66,6 +74,10 @@ export class Uu implements UWrapper {
 
   static fromHexish(hexish: string): Uu {
     return new Uu(utils.fromHexish(hexish))
+  }
+
+  static fromUtf8(utf8: string): Uu {
+    return new Uu(utils.fromUtf8(utf8))
   }
 
   static genRandom(length: number): Uu {

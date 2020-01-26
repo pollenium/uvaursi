@@ -4,10 +4,12 @@ export declare class Uu implements UWrapper {
     readonly u: Uint8Array;
     private hex;
     private phex;
+    private utf8;
     constructor(u: Uint8Array);
     toArray(): Array<number>;
     toHex(): string;
     toPhex(): string;
+    toUtf8(): string;
     genClone(): Uu;
     genPaddedLeft(length: number): Uu;
     genPaddedRight(length: number): Uu;
@@ -16,6 +18,7 @@ export declare class Uu implements UWrapper {
     unwrap(): Uint8Array;
     static fromArray(array: Array<number>): Uu;
     static fromHexish(hexish: string): Uu;
+    static fromUtf8(utf8: string): Uu;
     static genRandom(length: number): Uu;
     static genConcat(uvaursis: Array<Uish>): Uu;
     static genZeros(length: number): Uu;

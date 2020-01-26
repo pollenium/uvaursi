@@ -29,6 +29,13 @@ var Uu = /** @class */ (function () {
         this.phex = utils.toPhex(this.u);
         return this.phex;
     };
+    Uu.prototype.toUtf8 = function () {
+        if (this.utf8) {
+            return this.utf8;
+        }
+        this.utf8 = utils.toUtf8(this.u);
+        return this.utf8;
+    };
     Uu.prototype.genClone = function () {
         return new Uu(this.u.slice());
     };
@@ -52,6 +59,9 @@ var Uu = /** @class */ (function () {
     };
     Uu.fromHexish = function (hexish) {
         return new Uu(utils.fromHexish(hexish));
+    };
+    Uu.fromUtf8 = function (utf8) {
+        return new Uu(utils.fromUtf8(utf8));
     };
     Uu.genRandom = function (length) {
         return new Uu(utils.genRandom(length));

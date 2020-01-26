@@ -25,7 +25,10 @@
     "ts-jest": "^24.1.0"
   },
   "dependencies": {
+    "@protobufjs/utf8": "^1.1.0",
+    "@types/utf8": "^2.1.6",
     "tsc": "^1.20150623.0",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "utf8": "^3.0.0"
   }
 }

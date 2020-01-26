@@ -8,6 +8,7 @@
     "typeRoots": [
       "./node_modules/@types"
     ],
-    "declaration": true
+    "declaration": true,
+    "moduleResolution": "node"
   }
 }
