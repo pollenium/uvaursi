@@ -72,6 +72,9 @@ var Uu = /** @class */ (function () {
         });
         return new Uu(utils.genConcat(us));
     };
+    Uu.genEmpty = function () {
+        return Uu.genZeros(0);
+    };
     Uu.genZeros = function (length) {
         return new Uu(new Uint8Array(length));
     };

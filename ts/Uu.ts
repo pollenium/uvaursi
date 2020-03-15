@@ -91,6 +91,10 @@ export class Uu implements UWrapper {
     return new Uu(utils.genConcat(us))
   }
 
+  static genEmpty(): Uu {
+    return Uu.genZeros(0)
+  }
+
   static genZeros(length: number): Uu {
     return new Uu(new Uint8Array(length))
   }

@@ -21,6 +21,7 @@ export declare class Uu implements UWrapper {
     static fromUtf8(utf8: string): Uu;
     static genRandom(length: number): Uu;
     static genConcat(uishes: Array<Uish>): Uu;
+    static genEmpty(): Uu;
     static genZeros(length: number): Uu;
     static wrap(uish: Uish): Uu;
 }
