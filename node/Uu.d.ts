@@ -23,5 +23,9 @@ export declare class Uu implements UWrapper {
     static genConcat(uishes: Array<Uish>): Uu;
     static genEmpty(): Uu;
     static genZeros(length: number): Uu;
+    static genFill(struct: {
+        length: number;
+        fill: number;
+    }): Uu;
     static wrap(uish: Uish): Uu;
 }

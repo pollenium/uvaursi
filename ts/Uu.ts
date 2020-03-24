@@ -99,6 +99,13 @@ export class Uu implements UWrapper {
     return new Uu(new Uint8Array(length))
   }
 
+  static genFill(struct: {
+    length: number,
+    fill: number
+  }): Uu {
+    return new Uu(new Uint8Array(struct.length).fill(struct.fill))
+  }
+
   static wrap(uish: Uish): Uu {
     if (uish instanceof Uint8Array) {
       return new Uu(uish)

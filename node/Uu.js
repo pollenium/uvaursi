@@ -78,6 +78,9 @@ var Uu = /** @class */ (function () {
     Uu.genZeros = function (length) {
         return new Uu(new Uint8Array(length));
     };
+    Uu.genFill = function (struct) {
+        return new Uu(new Uint8Array(struct.length).fill(struct.fill));
+    };
     Uu.wrap = function (uish) {
         if (uish instanceof Uint8Array) {
             return new Uu(uish);

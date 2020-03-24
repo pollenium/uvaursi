@@ -19,3 +19,7 @@ test('genConcat', function () {
     ]);
     expect(uu.toArray()).toStrictEqual([0, 1, 2]);
 });
+test('genFill', function () {
+    var uu = Uu_1.Uu.genFill({ length: 4, fill: 7 });
+    expect(uu.toArray()).toStrictEqual([7, 7, 7, 7]);
+});
