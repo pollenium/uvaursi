@@ -14,7 +14,7 @@ export declare class Uu implements UWrapper {
     genClone(): Uu;
     genSlice(struct: {
         start: number;
-        length: number;
+        length?: number;
     }): Uu;
     genPaddedLeft(length: number): Uu;
     genPaddedRight(length: number): Uu;

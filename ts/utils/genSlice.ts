@@ -1,7 +1,7 @@
 export interface GenSliceStruct {
   u: Uint8Array,
   start: number,
-  length: number
+  length?: number
 }
 
 export class InvalidSliceRangeError extends Error {
@@ -14,14 +14,29 @@ export class InvalidSliceRangeError extends Error {
 
 export function genSlice(struct: GenSliceStruct): Uint8Array {
   const { u, start, length } = struct
+
   if (
     !Number.isInteger(start) ||
-    !Number.isInteger(length) ||
     start < 0 ||
-    length < 0 ||
-    start + length > u.length
+    start > u.length
   ) {
     throw new InvalidSliceRangeError(struct)
   }
-  return u.slice(start, start + length)
+
+  if (length === undefined) {
+    return u.slice(start)
+  }
+
+  const end = start + length
+
+  if (
+    !Number.isInteger(length) ||
+    length < 0 ||
+    end > u.length
+  ) {
+    throw new InvalidSliceRangeError(struct)
+  }
+
+  return u.slice(start, end)
+
 }

@@ -28,12 +28,19 @@ exports.InvalidSliceRangeError = InvalidSliceRangeError;
 function genSlice(struct) {
     var u = struct.u, start = struct.start, length = struct.length;
     if (!Number.isInteger(start) ||
-        !Number.isInteger(length) ||
         start < 0 ||
-        length < 0 ||
-        start + length > u.length) {
+        start > u.length) {
         throw new InvalidSliceRangeError(struct);
     }
-    return u.slice(start, start + length);
+    if (length === undefined) {
+        return u.slice(start);
+    }
+    var end = start + length;
+    if (!Number.isInteger(length) ||
+        length < 0 ||
+        end > u.length) {
+        throw new InvalidSliceRangeError(struct);
+    }
+    return u.slice(start, end);
 }
 exports.genSlice = genSlice;

@@ -10,7 +10,7 @@ class Fixture{
   constructor (
     u: Array<number>,
     public start: number,
-    public length: number,
+    public length: number | undefined,
     expected: Array<number>
   ) {
     this.u = new Uint8Array(u)
@@ -28,7 +28,12 @@ const fixtures = [
   new Fixture([10, 11, 12], 0, 3, [10, 11, 12]),
   new Fixture([10, 11, 12], 1, 0, []),
   new Fixture([10, 11, 12], 1, 1, [11]),
-  new Fixture([10, 11, 12], 1, 2, [11, 12])
+  new Fixture([10, 11, 12], 1, 2, [11, 12]),
+  new Fixture([], 0, undefined, []),
+  new Fixture([10], 0, undefined, [10]),
+  new Fixture([10, 11, 12], 0, undefined, [10, 11, 12]),
+  new Fixture([10, 11, 12], 1, undefined, [11, 12]),
+  new Fixture([10, 11, 12], 2, undefined, [12])
 ]
 
 fixtures.forEach((fixture) => {
