@@ -11,6 +11,10 @@ export declare class Uu implements UWrapper {
     toPhex(): string;
     toUtf8(): string;
     genClone(): Uu;
+    genSlice(struct: {
+        firstIndex: number;
+        length: number;
+    }): Uu;
     genPaddedLeft(length: number): Uu;
     genPaddedRight(length: number): Uu;
     genXor(uish: Uish): Uu;

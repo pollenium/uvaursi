@@ -12,6 +12,7 @@ export { toUtf8 } from './utils/toUtf8'
 
 export { genPaddedLeft, genPaddedRight } from './utils/genPadded'
 export { genXor } from './utils/genXor'
+export { genSlice } from './utils/genSlice'
 
 export { getIsEqual } from './utils/getIsEqual'
 

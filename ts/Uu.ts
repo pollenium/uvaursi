@@ -42,6 +42,12 @@ export class Uu implements UWrapper {
     return new Uu(this.u.slice())
   }
 
+  genSlice(struct: { firstIndex: number, length: number }): Uu {
+    return new Uu(
+      utils.genSlice({ u: this.u, ...struct })
+    )
+  }
+
   genPaddedLeft(length: number): Uu {
     return new Uu(
       utils.genPaddedLeft(length, this.u)
