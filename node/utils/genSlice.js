@@ -17,8 +17,8 @@ var InvalidSliceRangeError = /** @class */ (function (_super) {
     __extends(InvalidSliceRangeError, _super);
     function InvalidSliceRangeError(struct) {
         var _this = this;
-        var u = struct.u, firstIndex = struct.firstIndex, length = struct.length;
-        _this = _super.call(this, "InvalidSliceRangeError: u.length: " + u.length + ", firstIndex: " + firstIndex + ", length: " + length) || this;
+        var u = struct.u, start = struct.start, length = struct.length;
+        _this = _super.call(this, "InvalidSliceRangeError: u.length: " + u.length + ", start: " + start + ", length: " + length) || this;
         Object.setPrototypeOf(_this, InvalidSliceRangeError.prototype);
         return _this;
     }
@@ -26,14 +26,14 @@ var InvalidSliceRangeError = /** @class */ (function (_super) {
 }(Error));
 exports.InvalidSliceRangeError = InvalidSliceRangeError;
 function genSlice(struct) {
-    var u = struct.u, firstIndex = struct.firstIndex, length = struct.length;
-    if (!Number.isInteger(firstIndex) ||
+    var u = struct.u, start = struct.start, length = struct.length;
+    if (!Number.isInteger(start) ||
         !Number.isInteger(length) ||
-        firstIndex < 0 ||
+        start < 0 ||
         length < 0 ||
-        firstIndex + length > u.length) {
+        start + length > u.length) {
         throw new InvalidSliceRangeError(struct);
     }
-    return u.slice(firstIndex, firstIndex + length);
+    return u.slice(start, start + length);
 }
 exports.genSlice = genSlice;

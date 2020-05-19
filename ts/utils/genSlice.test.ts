@@ -9,7 +9,7 @@ class Fixture{
 
   constructor (
     u: Array<number>,
-    public firstIndex: number,
+    public start: number,
     public length: number,
     expected: Array<number>
   ) {

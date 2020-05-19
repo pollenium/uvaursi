@@ -14,8 +14,8 @@ exports.__esModule = true;
 var genSlice_1 = require("./genSlice");
 var original = new Uint8Array([10, 11, 12, 13]);
 var Fixture = /** @class */ (function () {
-    function Fixture(u, firstIndex, length, expected) {
-        this.firstIndex = firstIndex;
+    function Fixture(u, start, length, expected) {
+        this.start = start;
         this.length = length;
         this.u = new Uint8Array(u);
         this.expected = new Uint8Array(expected);

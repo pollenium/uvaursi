@@ -12,7 +12,7 @@ export declare class Uu implements UWrapper {
     toUtf8(): string;
     genClone(): Uu;
     genSlice(struct: {
-        firstIndex: number;
+        start: number;
         length: number;
     }): Uu;
     genPaddedLeft(length: number): Uu;

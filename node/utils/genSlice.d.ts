@@ -1,6 +1,6 @@
 export interface GenSliceStruct {
     u: Uint8Array;
-    firstIndex: number;
+    start: number;
     length: number;
 }
 export declare class InvalidSliceRangeError extends Error {

@@ -1,27 +1,27 @@
 export interface GenSliceStruct {
   u: Uint8Array,
-  firstIndex: number,
+  start: number,
   length: number
 }
 
 export class InvalidSliceRangeError extends Error {
   constructor(struct: GenSliceStruct) {
-    const { u, firstIndex, length } = struct
-    super(`InvalidSliceRangeError: u.length: ${u.length}, firstIndex: ${firstIndex}, length: ${length}`)
+    const { u, start, length } = struct
+    super(`InvalidSliceRangeError: u.length: ${u.length}, start: ${start}, length: ${length}`)
     Object.setPrototypeOf(this, InvalidSliceRangeError.prototype)
   }
 }
 
 export function genSlice(struct: GenSliceStruct): Uint8Array {
-  const { u, firstIndex, length } = struct
+  const { u, start, length } = struct
   if (
-    !Number.isInteger(firstIndex) ||
+    !Number.isInteger(start) ||
     !Number.isInteger(length) ||
-    firstIndex < 0 ||
+    start < 0 ||
     length < 0 ||
-    firstIndex + length > u.length
+    start + length > u.length
   ) {
     throw new InvalidSliceRangeError(struct)
   }
-  return u.slice(firstIndex, firstIndex + length)
+  return u.slice(start, start + length)
 }
