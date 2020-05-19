@@ -22,6 +22,7 @@ var utils = __importStar(require("./utils"));
 var Uu = /** @class */ (function () {
     function Uu(u) {
         this.u = u;
+        this.length = u.length;
     }
     Uu.prototype.toArray = function () {
         return utils.toArray(this.u);

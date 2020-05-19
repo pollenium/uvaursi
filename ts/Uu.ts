@@ -4,11 +4,15 @@ import { Uish } from './Uish'
 
 export class Uu implements UWrapper {
 
+  readonly length: number
+
   private hex: string;
   private phex: string;
   private utf8: string;
 
-  constructor(readonly u: Uint8Array) {}
+  constructor(readonly u: Uint8Array) {
+    this.length = u.length
+  }
 
   toArray(): Array<number> {
     return utils.toArray(this.u)

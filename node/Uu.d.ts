@@ -2,6 +2,7 @@ import { UWrapper } from './UWrapper';
 import { Uish } from './Uish';
 export declare class Uu implements UWrapper {
     readonly u: Uint8Array;
+    readonly length: number;
     private hex;
     private phex;
     private utf8;
