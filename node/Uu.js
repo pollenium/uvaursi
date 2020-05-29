@@ -103,6 +103,9 @@ var Uu = /** @class */ (function () {
         if (uish instanceof ArrayBuffer) {
             return new Uu(new Uint8Array(uish));
         }
+        if (uish instanceof Buffer) {
+            return new Uu(new Uint8Array(uish));
+        }
         if (uish.u) {
             return new Uu(uish.u);
         }
